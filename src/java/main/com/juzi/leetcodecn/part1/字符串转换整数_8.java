@@ -1,22 +1,6 @@
 package com.juzi.leetcodecn.part1;
 
 /**
- * @author : yl
- * @date : 2023/11/8
- */
-public class 字符串转换整数_8 {
-
-    public static void main(String[] args) {
-        StringBuilder stringBuilder = new StringBuilder();
-        Solution solution = new Solution();
-        solution.getNum("-+123", stringBuilder, 0,false);
-        System.out.println(stringBuilder);
-        System.out.println(solution.myAtoi(stringBuilder.toString()));
-    }
-
-}
-
-/**
  * 请你来实现一个 myAtoi(string s) 函数，使其能将字符串转换成一个 32 位有符号整数（类似 C/C++ 中的 atoi 函数）。
  * <p>
  * 函数 myAtoi(string s) 的算法如下：
@@ -33,21 +17,20 @@ public class 字符串转换整数_8 {
  * <p>
  * 本题中的空白字符只包括空格字符 ' ' 。
  * 除前导空格或数字后的其余字符串外，请勿忽略 任何其他字符
+ * @author : yl
+ * @date : 2023/11/8
  */
-class Solution {
-    /**
-     * 输入：s = "42"
-     * 输出：42
-     * 解释：加粗的字符串为已经读入的字符，插入符号是当前读取的字符。
-     * 第 1 步："42"（当前没有读入字符，因为没有前导空格）
-     * ^
-     * 第 2 步："42"（当前没有读入字符，因为这里不存在 '-' 或者 '+'）
-     * ^
-     * 第 3 步："42"（读入 "42"）
-     * ^
-     * 解析得到整数 42 。
-     * 由于 "42" 在范围 [-231, 231 - 1] 内，最终结果为 42
-     */
+public class 字符串转换整数_8 {
+
+    public static void main(String[] args) {
+        StringBuilder stringBuilder = new StringBuilder();
+        字符串转换整数_8 solution = new 字符串转换整数_8();
+        solution.getNum("-+123", stringBuilder, 0,false);
+        System.out.println(stringBuilder);
+        System.out.println(solution.myAtoi(stringBuilder.toString()));
+    }
+
+
     public int myAtoi(String s) {
         StringBuilder sb = new StringBuilder();
         getNum(s, sb, 0,false);
